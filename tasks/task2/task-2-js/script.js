@@ -2,37 +2,37 @@ window.onload = setup;
 
 /** function setup */
 function setup(){
-console.log("we are a go!")
-/*** ALL ANWSERS TO BE ADDED IN THE ALLOCATED SPACE */
-/*** START PART ONE ACCESS */ 
-/* 1: all paragraph elements */
-/***CODE */
-/***OUTPUT: 
- * 
+    console.log("we are a go!")
+    /*** ALL ANWSERS TO BE ADDED IN THE ALLOCATED SPACE */
+    /*** START PART ONE ACCESS */ 
+    /* 1: all paragraph elements */
+    /***CODE */ console.log(document.getElementsByTagName("p"));
+    /***OUTPUT: 
+ * HTMLCollection [<p id="1">, <p id="2">, <p id="3">, <p id="4">, <p id="5">, <p id="6">, <p id="7">, <p id="8">, <p id="9">] (9)
  */
 
 
 /*************************************** */
 /* 2: only the first paragraph element */
-/***CODE */
+/***CODE */ console.log(document.getElementsByTagName("p")[0]);
 /***OUTPUT: 
- * 
+ * <p id="1">...</p>
  */
 
 
 /*************************************** */
 /* 3: all elements with the class inner-container */
-/***CODE */
+/***CODE */ console.log(document.getElementsByClassName("inner-container"));
 /***OUTPUT: 
- * 
+ * HTMLCollection [<div class="inner-container">, <div class="inner-container">, <div class="inner-container">, <div class="inner-container">, <div class="inner-container">, <div class="inner-container">, <div class="inner-container">, <div class="inner-container">] (8)
  */
 
 
 /*************************************** */
 /* 4: the last image element inside the element that has the class img-container */
-/***CODE */
+/***CODE */ console.log(document.getElementsByClassName("img-container")[7]); // we migt be a little silly
 /***OUTPUT: 
- * 
+ * <div class="img-container">...</div>
  */
 
 
@@ -40,17 +40,22 @@ console.log("we are a go!")
 /* 5A: all h2 elements */
 /* 5B: length of the list in 5A */
 /* 5C: the text content of the first element in the list from 5A */
-/***CODE */
+/***CODE */ console.log(document.getElementsByTagName("h2"));
+    console.log(document.getElementsByTagName("h2").length);
+     console.log(document.getElementsByTagName("h2")[0].textContent);
 /***OUTPUT: 
- * 
+ * 5A HTMLCollection [<h2>] (1) (script.js, line 43)
+ * 5B 1
+ * 5C <h2> The header of this fancy page</h2>
  */
 
 
 /*************************************** */
 /* 6: the element with id name parent */
-/***CODE */
+/***CODE */ console.log(document.getElementById("parent"));
+    
 /***OUTPUT: 
- * 
+ * <section id="parent">...</section>
  */
 
 /*************************************** */
@@ -61,31 +66,32 @@ console.log("we are a go!")
 /*** START PART TWO MODIFY */ 
 /*************************************** */
 /* 1: Select the first paragraph and replace the text within the paragraph... */
-/***CODE */
+/***CODE */ console.log(document.getElementsByTagName("p")[0].textContent = "Norah, Jan 22, 2026");
+    
 /*************************************** */
 /* 2: Select all elements in the HTML that have the class name content-container
  and change the background color ... of first and second ...*/
-/***CODE */
-
+/***CODE */ console.log(document.getElementsByClassName("content-container")[0].style.background = "pink");
+    console.log(document.getElementsByClassName("content-container")[1].style.background = "lightgreen");
+    
 /*************************************** */
 /* 3: Change the src element of the first image element on the page to be ...
-/***CODE */
+/***CODE  console.log(document.getElementsByTagName("img")[0].src = seven.png);*/  //???????
 
 /*************************************** */
 /* 4: Select the third paragraph element on the page and 
 replace the content (within the paragraph) to be an h2 element which contains the text `TEST 123`
-/***CODE */
+/***CODE */ document.getElementsByTagName("p")[2]. innerHTML = "h2» TEST 123 </h2>";
 
 /*************************************** */
 /* 5: Select the fourth paragraph element on the page and 
 add to the existing content an h2 element containing the text `TEST 123`
-/***CODE */
+/***CODE */ document.getElementsByTagName("p")[3].innerHTML += "<h2> TEST 123 </h2>";
 
 /*************************************** */
 /* 6: Select the fifth paragraph element on the page and add to the existing content 
 an img element that holds `one.png`, and add the class newStyle to said paragraph element.
-/***CODE */
-
+/***CODE */ document.getElementsByTagName("img")[5]. index.HTML = "h2» TEST 123 </h2>";
 
 /*************************************** */
 /* 7: Add the following array variable: let colors = ['red','blue','green','orange'];, 
