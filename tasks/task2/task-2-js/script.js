@@ -91,7 +91,9 @@ add to the existing content an h2 element containing the text `TEST 123`
 /*************************************** */
 /* 6: Select the fifth paragraph element on the page and add to the existing content 
 an img element that holds `one.png`, and add the class newStyle to said paragraph element.
-/***CODE */ document.getElementsByTagName("img")[5]. index.HTML = "h2» TEST 123 </h2>";
+/***CODE */ let fifth_p = document.getElementsByTagName("p")[4]
+    fifth_p.classList.add("newStyle")
+    fifth_p.innerHTML = "one.png"
 
 /*************************************** */
 /* 7: Add the following array variable: let colors = ['red','blue','green','orange'];, 
@@ -100,23 +102,36 @@ Next, iterate over the colors array, and for each color:
 assign the element from innerContainers variable with the same index 
 (i.e. colors[0] should be allocated to the first innerContainers element, colors[1] to the second, etc ...) 
 a background using that color.
-/***CODE */
+/***CODE */ let colors = ['red', 'blue', 'green', 'orange'];
+    let innerContainers = document.getElementsByClassName("inner-container");
+    
+    for (let i = 0; i < innerContainers.length; i++){
+    innerContainers[i]=colors[i]
+}
 
 /*************************************** */
-/*** END PART TWO MODIFY */ 
+/*** END PART TWO MODIFY */
 
 
 /*************************************** */
-/*** START PART THREE CREATE */ 
+/*** START PART THREE CREATE */
 /*************************************** */
 /* 1: NEW PARAGRAPHS */
 /* 1A: Access all paragraph elements, and store the result in a variable called: allPTagsThree */
+    let allPTagsThree = document.querySelectorAll("p");
 /* 1B: Create a function:function customCreateElement(parent){ //body } */
-/* 1C:  In the body of customCreateElement create a new parargraph element*/
-/* 1D:  Set the text of this element to be : `using create Element`*/
-/* 1E:  Set the background of this paragraph element to be green */
-/* 1F:  Set the color of the text in this paragraph element to be white */
-/* 1G: Append this new element to the parent variable within the function. */
+    function customCreateElement(parent) { 
+        /* 1C: In the body of customCreateElement create a new parargraph element*/
+        let newParagraph = document.createElement("p")
+        /* 1D: Set the text of this element to be : `using create Element`*/
+        newParagraph.innerHTML = "using create Element"
+        /* 1E: Set the background of this paragraph element to be green */
+        newParagraph.style.backgroundColor = "green"
+        /* 1F: Set the color of the text in this paragraph element to be white */
+        newParagraph.querySelector("p").style.color = white
+        /* 1G: Append this new element to the parent variable within the function. */
+    }
+
 /* 1H: Iterate through the allPTagsThree array and call customCreateElement(), 
 passing the current allPTagsThree element as the parent with each iteration.*/
 /***CODE */
