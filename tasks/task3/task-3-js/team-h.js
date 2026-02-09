@@ -42,7 +42,7 @@ function setup_H() {
 
     function setupSketch() {
       //offset
-      let offset = 60;
+      let offset = 90;
       //make a grid of circles - STATIC
       for (let i = 0; i < 12; i++) {
         for (let j = 0; j < 12; j++) {
@@ -51,8 +51,8 @@ function setup_H() {
           circle.classList.add("TEAM_H_circle");
           circle.style.width = `20px`;
           circle.style.height = `20px`;
-          circle.style.left = offset + i * 25 + "px";
-          circle.style.top = offset + j * 25 + "px";
+          circle.style.left = offset + i * 90 + "px";
+          circle.style.top = offset + j * 90 + "px";
           parentCanvas.appendChild(circle);
           circles.push(circle);
         }

@@ -95,10 +95,94 @@ function setup_E() {
      * Do not change any code above or the HTML markup.
      * **/
 
-    function aniB(parentCanvas) {
-      console.log("in anti-B -teamE");
+function aniB(parentCanvas) {
+  console.log("in ani-B -teamE");
 
+ let sampleColors = [
+      "red"
+    ];
+
+  let boundingBoxParent = parentCanvas.getBoundingClientRect();
+  let cells = [];
+
+  let mouse = {
+    x: -9999,
+    y: -9999
+  };
+
+  const cellSize = 10;
+  const spacing = 15;
+  const influenceRadius = 80;
+  const maxPush = 10;
+
+  // track mouse movement
+  parentCanvas.addEventListener("mousemove", (e) => {
+    mouse.x = e.clientX - boundingBoxParent.left;
+    mouse.y = e.clientY - boundingBoxParent.top;
+  });
+
+  parentCanvas.addEventListener("mouseleave", () => {
+    mouse.x = -9999;
+    mouse.y = -9999;
+  });
+
+  // create grid
+  for (let i = spacing; i < boundingBoxParent.height; i += spacing) {
+    for (let j = spacing; j < boundingBoxParent.width; j += spacing) {
+
+      let rect = document.createElement("div");
+      rect.classList.add("TEAM_E_e_cell");
+      parentCanvas.appendChild(rect);
+
+      rect.style.position = "absolute";
+      rect.style.left = `${j}px`;
+      rect.style.top = `${i}px`;
+      rect.style.width = `${cellSize}px`;
+      rect.style.height = `${cellSize}px`;
+
+      cells.push({
+        el: rect,
+        x: j,
+        y: i,
+        offsetX: 0,
+        offsetY: 0
+      });
     }
+  }
+
+  animate();
+
+  function animate() {
+    cells.forEach(cell => {
+      let dx = cell.x - mouse.x;
+      let dy = cell.y - mouse.y;
+      let dist = Math.sqrt(dx * dx + dy * dy);
+
+      if (dist < influenceRadius) {
+        let force = (2 - dist / influenceRadius) * maxPush;
+
+        let angle = Math.atan2(dy, dx);
+        cell.offsetX = Math.cos(angle) * force;
+        cell.offsetY = Math.sin(angle) * force;
+
+        // colour change when close
+        cell.el.style.background = sampleColors
+
+      } else {
+        // ease back to original position
+        cell.offsetX *= 0.9;
+        cell.offsetY *= 0.9;
+        cell.el.style.background = "pink";
+      }
+
+      cell.el.style.transform =
+        `translate(${cell.offsetX}px, ${cell.offsetY}px)`;
+    });
+
+    requestAnimationFrame(animate);
+  }
+}
+
 
     /****************ANI C ************************************ */
     /** PUT ALL YOUR CODE FOR INTERACTIVE PATTERN C INSIDE HERE */
