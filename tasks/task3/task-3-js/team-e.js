@@ -25,14 +25,12 @@ function setup_E() {
   function aniA(parentCanvas) {
     console.log("in ani-A -teamE");
 
-      let circles = []; //empty array of circles
+      let circles = []; 
 
-      //call to setup the animation before running
       setupSketch();
-      //add event listener to the button
+     
+      function setupSketch() {
 
-    function setupSketch() {
-      //offset
       let offset = 40;
     
       for (let i = 0; i < 15; i++) {
@@ -46,34 +44,31 @@ function setup_E() {
           circle.style.left = offset + i * 20 + "px";
           circle.style.top = offset + j * 20 + "px";
 
-          // store grid position
           circle.dataset.x = i;
           circle.dataset.y = j;
 
           parentCanvas.appendChild(circle);
           circles.push(circle);
 
-          // click listener
           circle.addEventListener("click", () => rippleEffect(i, j));
         }
       }
     }
 
   function rippleEffect(cx, cy) {
-    const maxRadius = 30; // how far the wave spreads
+    const maxRadius = 30; 
 
     circles.forEach(circle => {
     let x = parseInt(circle.dataset.x);
     let y = parseInt(circle.dataset.y);
 
-    // distance from clicked circle
     let dist = Math.abs(cx - x) + Math.abs(cy - y);
 
     if (dist <= maxRadius) {
       setTimeout(() => {
-      circle.classList.remove("ripple"); // reset
-      void circle.offsetWidth;           // force reflow
-      circle.classList.add("ripple"); }, dist * 40); // delay creates wave effect
+      circle.classList.remove("TEAM_E_ripple"); 
+      void circle.offsetWidth;          
+      circle.classList.add("TEAM_E_ripple"); }, dist * 40); 
       }
     });
   } 
@@ -98,91 +93,7 @@ function setup_E() {
 function aniB(parentCanvas) {
   console.log("in ani-B -teamE");
 
- let sampleColors = [
-      "red"
-    ];
-
-  let boundingBoxParent = parentCanvas.getBoundingClientRect();
-  let cells = [];
-
-  let mouse = {
-    x: -9999,
-    y: -9999
-  };
-
-  const cellSize = 10;
-  const spacing = 15;
-  const influenceRadius = 80;
-  const maxPush = 10;
-
-  // track mouse movement
-  parentCanvas.addEventListener("mousemove", (e) => {
-    mouse.x = e.clientX - boundingBoxParent.left;
-    mouse.y = e.clientY - boundingBoxParent.top;
-  });
-
-  parentCanvas.addEventListener("mouseleave", () => {
-    mouse.x = -9999;
-    mouse.y = -9999;
-  });
-
-  // create grid
-  for (let i = spacing; i < boundingBoxParent.height; i += spacing) {
-    for (let j = spacing; j < boundingBoxParent.width; j += spacing) {
-
-      let rect = document.createElement("div");
-      rect.classList.add("TEAM_E_e_cell");
-      parentCanvas.appendChild(rect);
-
-      rect.style.position = "absolute";
-      rect.style.left = `${j}px`;
-      rect.style.top = `${i}px`;
-      rect.style.width = `${cellSize}px`;
-      rect.style.height = `${cellSize}px`;
-
-      cells.push({
-        el: rect,
-        x: j,
-        y: i,
-        offsetX: 0,
-        offsetY: 0
-      });
-    }
-  }
-
-  animate();
-
-  function animate() {
-    cells.forEach(cell => {
-      let dx = cell.x - mouse.x;
-      let dy = cell.y - mouse.y;
-      let dist = Math.sqrt(dx * dx + dy * dy);
-
-      if (dist < influenceRadius) {
-        let force = (2 - dist / influenceRadius) * maxPush;
-
-        let angle = Math.atan2(dy, dx);
-        cell.offsetX = Math.cos(angle) * force;
-        cell.offsetY = Math.sin(angle) * force;
-
-        // colour change when close
-        cell.el.style.background = sampleColors
-
-      } else {
-        // ease back to original position
-        cell.offsetX *= 0.9;
-        cell.offsetY *= 0.9;
-        cell.el.style.background = "pink";
-      }
-
-      cell.el.style.transform =
-        `translate(${cell.offsetX}px, ${cell.offsetY}px)`;
-    });
-
-    requestAnimationFrame(animate);
-  }
 }
-
 
     /****************ANI C ************************************ */
     /** PUT ALL YOUR CODE FOR INTERACTIVE PATTERN C INSIDE HERE */
@@ -204,25 +115,32 @@ function aniB(parentCanvas) {
      * using  ONLY key down and/or keyup -- any keys::
      */
 
-    function aniC(parentCanvas) {
-      console.log("in ani-C -teamE");
-    
-      /*** THIS IS THE CALLBACK FOR KEY DOWN (* DO NOT CHANGE THE NAME *..) */
-      windowKeyDownRef = function (e) {
-        //code for key down in here
-        console.log(e);
-        console.log("c-down");
-      };
+function aniC(parentCanvas) {
+  console.log("in aniC -teamE");
 
-      /*** THIS IS THE CALLBACK FOR KEY UP (*DO NOT CHANGE THE NAME..) */
-      windowKeyUpRef = function (e) {
-        console.log(e);
-        console.log("c-up");
-      };
-      //DO NOT REMOVE
-      window.addEventListener("keydown", windowKeyDownRef);
-      window.addEventListener("keyup", windowKeyUpRef);
-    }
+  windowKeyDownRef = function (e) {
+    console.log(e);
+
+    let emoji = document.createElement("span");
+    emoji.textContent = "😐"; 
+    emoji.classList.add("TEAM_E_emoji");
+
+    emoji.style.position = "absolute";
+    emoji.style.left = Math.random() * (parentCanvas.clientWidth - 30) + "px";
+    emoji.style.top = Math.random() * (parentCanvas.clientHeight - 30) + "px";
+    emoji.style.fontSize = "32px"; 
+
+    parentCanvas.appendChild(emoji);
+  };
+
+  windowKeyUpRef = function (e) {
+    console.log("key up:", e.code);
+  };
+
+  window.addEventListener("keydown", windowKeyDownRef);
+  window.addEventListener("keyup", windowKeyUpRef);
+}
+
 
     /****************ANI D************************************ */
     /** PUT ALL YOUR CODE FOR INTERACTIVE PATTERN D INSIDE HERE */
@@ -239,8 +157,41 @@ function aniB(parentCanvas) {
      * remember you can define other functions inside....
      * Do not change any code above or the HTML markup.
      * **/
-    function aniD(parentCanvas) {
-      console.log("in ani-D -teamE");
 
+    function aniD(parentCanvas) {
+      console.log("in ani-D-teamE");
+
+      let button = document.createElement("div");
+      button.classList.add("TEAM_E_box");
+      button.textContent = "Click for Sarcasm";
+      parentCanvas.appendChild(button);
+
+      const rect= parentCanvas.getBoundingClientRect();
+      console.log(rect);
+      console.log(rect.width, rect.height, rect.left, rect.top,);
+      const buttonRect = button.getBoundingClientRect();
+      console.log(buttonRect);
+      let sarcasmStrings = [
+        "I’m not saying I hate you, what I’m saying is that you are literally the Monday of my life.",
+        "Silence is golden. Duct tape is silver",
+        "I am busy right now, can I ignore you some other time",
+        "Find your patience before I lose mine.",
+        "It’s okay if you don’t like me. Not everyone has good taste.",
+        "Cancel my subscription because I don’t need your issues.",
+        "No, you don’t have to repeat yourself. I was ignoring you the first time.",
+        "I don’t have the energy to pretend to like you today.",
+        "My imaginary friend says that you need a therapist.",
+        "Sometimes I wish I was an octopus so I could slap eight people at once.",
+        "I’ll get over it. I just need to be dramatic first.",
+        "You’re everything I want in someone I don’t want anymore.",
+        "You play the victim. I’ll play the disinterested bystander.",
+      ];
+
+      button.addEventListener("click", changeSarcasmRemarks);
+        
+      function changeSarcasmRemarks() {
+        let randomIndex = Math.floor(Math.random() * sarcasmStrings.length);
+        button.textContent = sarcasmStrings[randomIndex];
+      }
     }
   }
