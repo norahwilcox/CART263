@@ -90,10 +90,57 @@ function setup_E() {
      * Do not change any code above or the HTML markup.
      * **/
 
-function aniB(parentCanvas) {
-  console.log("in ani-B -teamE");
+  function aniB(parentCanvas) {
+    console.log("in ani-B-teamE");
+    // when it's called it produces an image
+    function createImage() {
+      let image = document.createElement("img");
+      image.src = 'assets/image/clown.png'
+      image.style.left = Math.random() * 300 + "px"
+      image.style.top = "10px"
+      parentCanvas.appendChild(image);
+      image.classList.add("TEAM_E_Image")
+      return image;
+    }
+  
+    let clownArray = []
+  
+    for (let clownCounter = 0; clownCounter < 15; clownCounter += 1) {
+      // stardropcounter gets bigger by 1 each time until it hits 300
+      clownArray.push({
+        // speed of the stardrop
+        speed: (Math.random() * 20) + 10,
+        // size referece for stars
+        // colour of the star drop—stardrops are lighter colour
+        image: createImage()
+    
+      });
+    }
+  
+    window.requestAnimationFrame(draw);
 
-}
+  
+    function draw() {
+      // raindrops
+      moveClownArray();
+      //ctx.drawImage(clown)
+      window.requestAnimationFrame(draw);
+
+    }
+
+    function moveClownArray() {
+      //for loop - for each rainDrop in the group move each one
+      for (let position = 0; position < 15; position++) {
+    
+        clownArray[position].image.style.top = parseFloat(clownArray[position].image.style.top) + clownArray[position].speed + "px";
+        if (parseFloat(clownArray[position].image.style.top) > 300) {
+          // resetting the raindrop to the top
+          console.log(position)
+          clownArray[position].image.style.top = "0px";
+        }
+      }
+    }
+  }
 
     /****************ANI C ************************************ */
     /** PUT ALL YOUR CODE FOR INTERACTIVE PATTERN C INSIDE HERE */
