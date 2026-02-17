@@ -104,6 +104,17 @@ window.onload = function (){
     bird.move();
     bird.wrap();
   }
+    
+       // if the first dog is set to jump
+    if (garden.dogs[0].isjumping === true) {
+      console.log("jump")
+      garden.dogs[0].updateJump()
+      garden.dogs[0].catchBird(garden.birds[0])
+      
+      for (let i = 0; i < garden.birds.length; i++){
+        garden.dogs[0].catchBird(garden.birds[i])
+      }
+    }
   window.requestAnimationFrame(updateGarden)
   }
 
@@ -112,6 +123,15 @@ window.onload = function (){
   createBirds(); // make burd instances
   renderAnimals();
   window.requestAnimationFrame(updateGarden);
+
+  window.addEventListener("keydown", function (e) {
+    if (e.code === "Space") {
+      e.preventDefault(); // inbuilt function that stops the defult behaviour
+  if(garden.dogs[0].isjumping ===false){
+        garden.dogs[0].jump()    
+      }
+    }
+
+  })
 }
 
-  

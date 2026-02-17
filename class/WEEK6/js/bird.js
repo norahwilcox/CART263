@@ -38,6 +38,16 @@ class Bird extends Animal{
       this.vy += randomRange(-.1, .1);
     }
   }
+    
+    wrap() {
+
+     // reset y velocity    
+    if (this.x > window.innerWidth) {
+      //reset
+      this.vy = 0;
+    }
+        super.wrap();
+    }
 // Display the bird as a ellipse
   renderAnimal() {
     // Remember to call the superclass' version of this method!
