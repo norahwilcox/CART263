@@ -1,0 +1,150 @@
+@font-face {
+    font-family: 'Upheaval TT (BRK)';
+    /* Name you want to use in CSS */
+    src: url('/fonts/upheavtt.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Make the body take the full screen */
+body, html {
+    height: 100%;
+    margin: 0;
+    background-color: #a8d5f1;
+}
+
+/* Center everything inside start-page */
+.start-page {
+    display: flex;
+    justify-content: center;
+    /* horizontal center */
+    align-items: center;
+    /* vertical center */
+    height: 100vh;
+    /* full viewport height */
+}
+
+/* Base Rectangle */
+.rectangle-1 {
+    width: 574px;
+    height: 330px;
+    background-color: #e9e4e4;
+    border-radius: 0px;
+    
+    display: flex;
+    flex-direction: column;
+    /* stack children vertically */
+    align-items: center;
+    /* horizontal center */
+    justify-content: center;
+    /* vertical center */
+    gap: 20px;
+
+    border-width: 5px 5px 5px 5px;
+    /* top right bottom left */
+    border-style: solid;
+    border-color: #ffffff #747474 #747474 #ffffff;
+    /* top right bottom left */
+}
+
+/* Blue Tab */
+.rectangle-2 {
+    width: 550px;
+    height: 57px;
+    background: linear-gradient(90deg, #112f9c 0.0%, #1a4bfd 100.0%);
+    border-radius: 9px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.names {
+    font-size: 24px;
+    font-family: "Upheaval TT (BRK)", sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+    padding-left: 15px;
+}
+
+/* X button */
+.rectangle-3 {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    background: #E9E4E4;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    border-width: 5px 5px 5px 5px;
+        /* top right bottom left */
+        border-style: solid;
+        border-color: #ffffff #747474 #747474 #ffffff;
+        /* top right bottom left */
+}
+
+.x {
+    font-size: 20px;
+    font-family:Arial, Helvetica, sans-serif, Times, 'Times New Roman', serif;
+    font-weight: 1000;
+    color: #555555;
+}
+
+/* White Rectangle */
+.rectangle-4 {
+    width: 508px;
+    height: 150px;
+    background-color: #ffffff;
+    border-radius: 0px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-size: 24px;
+    font-family: "Upheaval TT (BRK)", sans-serif;
+    font-weight: 400;
+    color: #555555;
+}
+
+/* Start Button */
+.rectangle-5 {
+    width: 120px;
+    height: 50px;
+    background-color: #e9e4e4;
+    border-radius: 0px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-width: 5px 5px 5px 5px;
+    /* top right bottom left */
+    border-style: solid;
+    border-color: #ffffff #747474 #747474 #ffffff;
+    /* top right bottom left */
+}
+
+.start {
+    font-size: 24px;
+    font-family: "Upheaval TT (BRK)", sans-serif;
+    font-weight: 400;
+    color: #555555;
+}
+
+/* Filter page version of rectangle-1 */
+.rectangle-1.filter-version {
+    width: 90%;
+    /* almost full screen width */
+    height: 80vh;
+    /* take most of vertical space */
+    gap: 30px;
+    /* maybe more spacing */
+}
