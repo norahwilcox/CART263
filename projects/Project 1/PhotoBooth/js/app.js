@@ -1,8 +1,20 @@
-const startButton = document.querySelector(".rectangle-5");
-const startPage = document.getElementById("startPage");
-const filterPage = document.getElementById("filterPage");
+// Get all pages
+const pages = document.querySelectorAll(".page");
 
-startButton.addEventListener("click", function() {
-    startPage.style.display = "none";
-    filterPage.style.display = "flex";  // or block depending on layout
+// Hide all pages except the first one
+function showPage(pageId) {
+    pages.forEach(page => page.style.display = "none");
+    document.getElementById(pageId).style.display = "flex";
+}
+
+// Initialize first page
+showPage("startPage");
+
+// Generic click handler
+document.addEventListener("click", (e) => {
+    const next = e.target.closest("[data-next]");
+    const back = e.target.closest("[data-back]");
+
+    if (next) showPage(next.dataset.next);
+    if (back) showPage(back.dataset.back);
 });
