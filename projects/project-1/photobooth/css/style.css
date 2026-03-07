@@ -226,6 +226,7 @@ video {
     height: 80%;
     display: flex;
     justify-content: center;
+    text-align: center;
     align-items: center;
 }
 
@@ -236,20 +237,18 @@ video {
     color: #555555;
 }
 
+.deleteAll {
+    font-size: 24px;
+    font-family: "Upheaval TT (BRK)", sans-serif;
+    font-weight: 400;
+    color: #555555;
+}
 
-/* Next Button (Rectangle 7) */
-.rectangle-7 {
-    background-color: #e9e4e4;
-    border-radius: 0px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #ffffff #747474 #747474 #ffffff;
-    width: 120px;
-    height: 80%;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.shareAll {
+    font-size: 24px;
+    font-family: "Upheaval TT (BRK)", sans-serif;
+    font-weight: 400;
+    color: #555555;
 }
 
 .next {
@@ -266,5 +265,14 @@ video {
 
 /* Buttons container adjustments for album */
 .page#albumPage .buttons {
-    gap: 60%;
+    gap: 10%;
+}
+
+/* container for the images taken */
+#album {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    justify-content:flex-start;
+    align-items: flex-start;
 }

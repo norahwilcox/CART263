@@ -52,7 +52,7 @@
                 <div class="rectangle-6" data-back="startPage">
                     <p class="back">‹ Back</p>
                 </div>
-                <div class="rectangle-7" data-next="cameraPage">
+                <div class="rectangle-6" data-next="cameraPage">
                     <p class="next">Next ›</p>
                 </div>
             </div>
@@ -73,14 +73,15 @@
 
             <div class="rectangle-4">
                 <video autoplay playsinline></video>
+                
             </div>
 
             <div class="buttons">
                 <div class="rectangle-6" data-back="filterPage">
                     <p class="back">‹ Back</p>
                 </div>
-                <div class="capture"></div>
-                <div class="rectangle-7" data-next="albumPage">
+                <div class="capture" id="captureBtn"></div>
+                <div class="rectangle-6" data-next="albumPage">
                     <p class="next">Next ›</p>
                 </div>
             </div>
@@ -99,14 +100,19 @@
                 </div>
             </div>
 
-            <div class="rectangle-4">
-            </div>
+            <div class="rectangle-4" id="album"></div>
 
             <div class="buttons">
                 <div class="rectangle-6" data-back="cameraPage">
                     <p class="back">‹ Back</p>
                 </div>
-                <div class="rectangle-7" data-next="startPage">
+                <div class="rectangle-6">
+                    <p class="deleteAll">Delete All</p>
+                </div>
+                <div class="rectangle-6" id="downloadBtn">
+                    <p class="shareAll">Share All</p>
+                </div>
+                <div class="rectangle-6" data-next="startPage">
                     <p class="next">Start ›</p>
                 </div>
             </div>
@@ -114,6 +120,7 @@
         </div>
     </div>
 
+    <canvas id="photoCanvas" style="display:none;"></canvas>
     <script src="/js/app.js"></script>
 </body>
 
