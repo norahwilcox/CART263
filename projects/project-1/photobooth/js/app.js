@@ -4,6 +4,7 @@ const captureBtn = document.getElementById("captureBtn");
 const canvas = document.getElementById("photoCanvas");
 const album = document.getElementById("album");
 const downloadBtn = document.getElementById("downloadBtn");
+const deleteBtn = document.getElementById("deleteBtn");
 
 let photos = [];
 
@@ -18,7 +19,7 @@ function showPage(pageId) {
     }
 }
 
-// Generic click handler
+// Click next or back to switch pages
 document.addEventListener("click", (e) => {
     const next = e.target.closest("[data-next]");
     const back = e.target.closest("[data-back]");
@@ -30,6 +31,7 @@ document.addEventListener("click", (e) => {
 // Initialize first page
 showPage("startPage");
 
+// For each page that uses the webacm, start the camera
 async function startCamera() {
     try {
         const stream = await navigator.mediaDevices.getUserMedia({
@@ -49,7 +51,7 @@ async function startCamera() {
 // Take photo when red circle clicked
 captureBtn.addEventListener("click", takePhoto);
 
-// takes a photo 
+// Take photo and adds to the album
 function takePhoto() {
     const video = document.querySelector("#cameraPage video");
     const context = canvas.getContext("2d");
@@ -67,34 +69,48 @@ function takePhoto() {
     updateAlbum();
 }
 
-// adds the photo to the album
+// Updates the album
 function updateAlbum() {
     album.innerHTML = "";
 
     photos.forEach((photo, index) => {
         const img = document.createElement("img");
         img.src = photo;
-        img.style.width = "150px";
-        img.style.margin = "10px";
+        img.style.width = "200px";
+        img.style.margin = "5px";
 
         album.appendChild(img);
-
     });
 }
 
+// Download image button
 downloadBtn.addEventListener("click", downloadPhotos);
+// Delete all button
+deleteBtn.addEventListener("click", deleteAllPhotos);
 
+// Asks user to download the image
 function downloadPhotos() {
+    if (confirm("Download all photos?")) {
+        photos.forEach((photo, index) => {
+            setTimeout(() => {
+                const link = document.createElement("a");
 
-    photos.forEach((photo, index) => {
-        const link = document.createElement("a");
+                link.href = photo;
+                link.download = "photobooth_" + (index + 1) + ".png";
 
-        link.href = photo;
-        link.download = "photobooth_" + (index + 1) + ".png";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
 
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    });
+                }, index * 200); // delays each download slightly
+            }
+        );
+    }
+}
 
+function deleteAllPhotos() {
+   if (confirm("Delete all photos?")) {
+        photos = [];
+        updateAlbum();
+    }
 }
