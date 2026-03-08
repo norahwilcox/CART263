@@ -1,17 +1,9 @@
+/* Creates the font */
 @font-face {
-    font-family: 'Upheaval TT (BRK)';
-    src: url('/fonts/upheavtt.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* Make the body take the full screen */
-body,
-html {
-    height: 100%;
-    margin: 0;
-    background-color: #a8d5f1;
-    overflow: hidden;
+  font-family: 'Levi Windows';
+  src: url('/fonts/Windows Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* All pages */
@@ -22,7 +14,7 @@ html {
     height: 100vh;
 }
 
-/* Buttons container */
+/* Buttons container for the bottom of the screen */
 .buttons {
     width: 90%;
     height: 10%;
@@ -31,8 +23,16 @@ html {
     align-items: center;
     gap: 60%;
 }
+/* Adjusting the buttons container for the capture button */
+.page#cameraPage .buttons {
+    gap: 30%
+}
+/* Buttons container adjustments for album */
+.page#albumPage .buttons {
+    gap: 10%;
+}
 
-/* Capture button in camera and album pages */
+/* Red circle button for taking images */
 .capture {
     width: 50px;
     aspect-ratio: 1/1;
@@ -40,8 +40,8 @@ html {
     border-radius: 50%;
 }
 
-/* Base Rectangle */
-.rectangle-1 {
+/* Base Rectangle/ window */
+.base {
     background-color: #e9e4e4;
     border-radius: 0px;
     border-width: 5px;
@@ -51,56 +51,53 @@ html {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding-top: 1%;
     gap: 2%;
+    padding-top: 0.5%;
 }
-
-/* Adjust rectangle-1 sizes per page type if needed */
-.page#startPage .rectangle-1 {
+/* Adjusts base size per page */
+.page#startPage .base {
     width: 40%;
     height: 40vh;
-    gap: 5%;
+    gap: 6%;
 }
-
-.page#filterPage .rectangle-1,
-.page#cameraPage .rectangle-1,
-.page#albumPage .rectangle-1 {
+.page#filterPage .base,
+.page#cameraPage .base,
+.page#albumPage .base {
     width: 80%;
     height: 85vh;
 }
 
-/* Blue Tab */
-.rectangle-2 {
+/* Blue Tab at the top */
+.tab {
     background: linear-gradient(90deg, #112f9c 0%, #1a4bfd 100%);
     border-radius: 9px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     display: flex;
     align-items: center;
     position: relative;
-    width: 97%;
+    width: 99%;
 }
-
-/* Adjust height per page */
-.page#startPage .rectangle-2 {
+/* Adjusts tab height per page */
+.page#startPage .tab {
     height: 18%;
 }
-
-.page#filterPage .rectangle-2,
-.page#cameraPage .rectangle-2,
-.page#albumPage .rectangle-2 {
+.page#filterPage .tab,
+.page#cameraPage .tab,
+.page#albumPage .tab {
     height: 10%;
 }
 
+/* Text for the tab */
 .names {
-    font-size: 24px;
-    font-family: "Upheaval TT (BRK)", sans-serif;
+    font-size:20px;
+    font-family: "Levi Windows", sans-serif;
     font-weight: 400;
     color: #ffffff;
     padding-left: 3%;
 }
 
 /* X button */
-.rectangle-3 {
+.xBtn {
     position: absolute;
     background: #E9E4E4;
     display: flex;
@@ -112,20 +109,18 @@ html {
     width: 30px;
     right: 2%;
 }
-
-/* Height per page */
-.page#startPage .rectangle-3 {
+/* X button height per page */
+.page#startPage .xBtn {
     top: 18%;
     height: 49%;
 }
-
-.page#filterPage .rectangle-3,
-.page#cameraPage .rectangle-3,
-.page#albumPage .rectangle-3 {
+.page#filterPage .xBtn,
+.page#cameraPage .xBtn,
+.page#albumPage .xBtn {
     top: 18%;
     height: 45%;
 }
-
+/* the "x" on the x button */
 .x {
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif, Times, 'Times New Roman', serif;
@@ -134,89 +129,76 @@ html {
 }
 
 /* White Rectangle */
-.rectangle-4 {
+.white {
     background-color: #ffffff;
     border-radius: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-/* Heights per page */
-.page#startPage .rectangle-4 {
+/* White rectangle heights per page */
+.page#startPage .white {
     width: 95%;
     height: 50%;
 }
-
-.page#filterPage .rectangle-4 {
+.page#filterPage .white {
     width: 60%;
     height: 100%;
 }
-
-.page#cameraPage .rectangle-4 {
+.page#cameraPage .white {
     width: 70%;
     height: 74%;
 }
-
-.page#albumPage .rectangle-4 {
-    width: 90%;
+.page#albumPage .white {
+    width: 97%;
     height: 74%;
 }
-
-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: scaleX(-1);
-    position:relative ;
-    z-index: 100;
-}
-
+/* CART 263 writing on the white rectangle */
 .title {
-    font-size: 24px;
-    font-family: "Upheaval TT (BRK)", sans-serif;
+    font-size: 20px;
+    font-family: "Levi Windows", sans-serif;
+    font-size: 20px;
     font-weight: 400;
     color: #555555;
 }
 
-/* Rectangle 5 (Start / content container) */
-.rectangle-5 {
+/* Start button and container for the filter page */
+.container {
     background-color: #e9e4e4;
     border-radius: 0px;
     border-width: 5px;
     border-style: solid;
     border-color: #ffffff #747474 #747474 #ffffff;
 }
-
-/* Rectangle 5 (Start) */
-.page#startPage .rectangle-5 {
-    width: 120px;
+/* Perameters for the start page */
+.page#startPage .container {
+    width: 140px;
     height: 15%;
 
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
-
-/* Rectangle 5 (content container) */
-.page#filterPage .rectangle-5 {
-    width: 90%;
+/* Perameters for the filter page */
+.page#filterPage .container {
+    width: 98%;
     height: 73%;
 
     display: flex;
-    justify-content:flex-end;
+    justify-content:end;
     align-items: center;
 }
-
+/* Start text on the start button */
 .start {
-    font-size: 24px;
-    font-family: "Upheaval TT (BRK)", sans-serif;
+    font-size: 16px;
+    font-family: "Levi Windows", sans-serif;
     font-weight: 400;
     color: #555555;
 }
 
-/* Back Button (Rectangle 6) */
-.rectangle-6 {
+/* Back, next, delete and save buttons */
+.btn {
     background-color: #e9e4e4;
     border-radius: 0px;
     border-width: 5px;
@@ -228,44 +210,35 @@ video {
     justify-content: center;
     text-align: center;
     align-items: center;
+    cursor: pointer;
 }
-
+/* text for the back button */
 .back {
-    font-size: 24px;
-    font-family: "Upheaval TT (BRK)", sans-serif;
+    font-size: 20px;
+    font-family: "Levi Windows", sans-serif;
     font-weight: 400;
     color: #555555;
 }
-
+/* text for the delete button */
 .deleteAll {
-    font-size: 24px;
-    font-family: "Upheaval TT (BRK)", sans-serif;
+    font-size: 20px;
+    font-family: "Levi Windows", sans-serif;
     font-weight: 400;
     color: #555555;
 }
-
-.shareAll {
-    font-size: 24px;
-    font-family: "Upheaval TT (BRK)", sans-serif;
+/* text for the save button */
+.saveAll {
+    font-size: 20px;
+    font-family: "Levi Windows", sans-serif;
     font-weight: 400;
     color: #555555;
 }
-
+/* text for the next button */
 .next {
-    font-size: 24px;
-    font-family: "Upheaval TT (BRK)", sans-serif;
+    font-size: 20px;
+    font-family: "Levi Windows", sans-serif;
     font-weight: 400;
     color: #555555;
-}
-
-/* Buttons container adjustments for camera */
-.page#cameraPage .buttons{
-    gap: 30%
-}
-
-/* Buttons container adjustments for album */
-.page#albumPage .buttons {
-    gap: 10%;
 }
 
 /* container for the images taken */
@@ -275,4 +248,49 @@ video {
     overflow-y: auto;
     justify-content:flex-start;
     align-items: flex-start;
+}
+
+/* file system column */
+.fileSystem {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+/* each row */
+.fileRow {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    font-size: 16px;
+    font-family: "Levi Windows", sans-serif;
+    font-weight: 400;
+    color: #555555;
+    gap: 3%;
+}
+/* folder icon */
+.fileIcon {
+    width: 26px;
+    margin-left: 3%;
+}
+/* children folders */
+.fileChildren {
+    display: none;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+/* filters */
+video {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    transform: scaleX(-1);
+    position:relative;
+    z-index: 100;
+}
+
+#photo1 {
+  filter: invert(100%) hue-rotate(180deg) brightness(110%);
 }

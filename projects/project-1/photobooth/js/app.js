@@ -1,3 +1,4 @@
+// Gets elements from HTML
 const pages = document.querySelectorAll(".page");
 const videos = document.querySelectorAll("video");
 const captureBtn = document.getElementById("captureBtn");
@@ -5,7 +6,12 @@ const canvas = document.getElementById("photoCanvas");
 const album = document.getElementById("album");
 const downloadBtn = document.getElementById("downloadBtn");
 const deleteBtn = document.getElementById("deleteBtn");
+const startBtn = document.querySelector("#startPage .container");
+const startText = startBtn.querySelector(".start");
+const buttons = document.querySelectorAll(".btn");
+const folders = document.querySelectorAll("[data-folder]");
 
+// Stores the photos taken in an array
 let photos = [];
 
 // Hide all pages except the first one
@@ -69,6 +75,23 @@ function takePhoto() {
     updateAlbum();
 }
 
+// Button pressed animation for the capture button
+captureBtn.addEventListener("mouseenter", () => {
+    captureBtn.style.backgroundColor = "#CF0C0C";
+});
+
+captureBtn.addEventListener("mouseleave", () => {
+    captureBtn.style.backgroundColor = "#FF0000";
+});
+
+captureBtn.addEventListener("mousedown", () => {
+    captureBtn.style.backgroundColor = "#ffffff";
+});
+
+captureBtn.addEventListener("mouseup", () => {
+    captureBtn.style.backgroundColor = "#FF0000";
+});
+
 // Updates the album
 function updateAlbum() {
     album.innerHTML = "";
@@ -108,9 +131,68 @@ function downloadPhotos() {
     }
 }
 
+// Deletes all the images in the album
 function deleteAllPhotos() {
    if (confirm("Delete all photos?")) {
         photos = [];
         updateAlbum();
     }
 }
+
+// Button pressed animation for the start button
+startBtn.addEventListener("mouseenter", () => {
+    startBtn.style.backgroundColor = "#C3B9B9";
+    startBtn.style.borderColor = "#747474 #F6F2F2 #F6F2F2 #747474";
+    startText.style.color = "#3F3F3F";
+
+});
+
+startBtn.addEventListener("mouseleave", () => {
+    startBtn.style.backgroundColor = "#e9e4e4";
+    startBtn.style.borderColor = "#ffffff #747474 #747474 #ffffff";
+    startText.style.color = "#555555";
+});
+
+// Button pressed animations for all other buttons
+buttons.forEach(btn => {
+    const text = btn.querySelector("p");
+
+    btn.addEventListener("mouseenter", () => {
+        btn.style.backgroundColor = "#C3B9B9";
+        btn.style.borderColor = "#747474 #F6F2F2 #F6F2F2 #747474";
+
+        if (text) text.style.color = "#3F3F3F";
+    });
+
+    btn.addEventListener("mouseleave", () => {
+        btn.style.backgroundColor = "#e9e4e4";
+        btn.style.borderColor = "#ffffff #747474 #747474 #ffffff";
+
+        if (text) text.style.color = "#555555";
+    });
+});
+
+// File open animation for parent and children
+folders.forEach(folder => {
+    folder.addEventListener("click", () => {
+        const icon = folder.querySelector(".fileIcon");
+        const children = folder.nextElementSibling;
+        const isOpen = icon.src.includes("file.open");
+
+        if (isOpen) {
+            icon.src = "assets/file.closed.png";
+
+            if(children && children.classList.contains("fileChildren")){
+                children.style.display = "none";
+            }
+
+        } else {
+            icon.src = "assets/file.open.png";
+
+            if(children && children.classList.contains("fileChildren")){
+                children.style.display = "flex";
+            }
+        }
+    });
+});
+
