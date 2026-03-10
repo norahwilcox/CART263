@@ -1,0 +1,498 @@
+/* Creates the font */
+@font-face {
+  font-family: 'Levi Windows';
+  src: url('/fonts/Windows Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-image: url("../assets/pixelbackground.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* All pages */
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Buttons container for the bottom of the screen */
+.buttons {
+    width: 90%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60%;
+}
+/* Adjusting the buttons container for the capture button */
+.page#cameraPage .buttons {
+    gap: 0;
+    justify-content: space-between;
+}
+/* Buttons container adjustments for album */
+.page#albumPage .buttons {
+    gap: 10%;
+}
+
+/* Red circle button for taking images */
+.capture {
+    width: 56px;
+    height: 56px;
+    background: #ff0000;
+    border-radius: 50%;
+    border: 4px solid #ffffff;
+    box-shadow: 0 0 0 3px #747474;
+    cursor: pointer;
+    transition: transform 100ms ease, background-color 100ms ease;
+}
+
+.capture.is-hover {
+    background: #cf0c0c;
+}
+
+.capture.is-pressed {
+    transform: translateY(1px);
+    background: #8f0000;
+}
+
+/* Base Rectangle/ window */
+.base {
+    background-color: #e9e4e4;
+    border-radius: 0px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #ffffff #747474 #747474 #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2%;
+    padding-top: 0.5%;
+}
+/* Adjusts base size per page */
+.page#startPage .base {
+    width: 40%;
+    height: 40vh;
+    gap: 6%;
+}
+.page#filterPage .base,
+.page#cameraPage .base,
+.page#albumPage .base {
+    width: 80%;
+    height: 85vh;
+}
+
+/* Blue Tab at the top */
+.tab {
+    background: linear-gradient(90deg, #112f9c 0%, #1a4bfd 100%);
+    border-radius: 9px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 99%;
+}
+/* Adjusts tab height per page */
+.page#startPage .tab {
+    height: 18%;
+}
+.page#filterPage .tab,
+.page#cameraPage .tab,
+.page#albumPage .tab {
+    height: 10%;
+}
+
+/* Text for the tab */
+.names {
+    font-size:20px;
+    font-family: "Levi Windows", sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+    padding-left: 3%;
+}
+
+/* X button */
+.xBtn {
+    position: absolute;
+    background: #E9E4E4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #ffffff #747474 #747474 #ffffff;
+    width: 30px;
+    right: 2%;
+}
+/* X button height per page */
+.page#startPage .xBtn {
+    top: 18%;
+    height: 49%;
+}
+.page#filterPage .xBtn,
+.page#cameraPage .xBtn,
+.page#albumPage .xBtn {
+    top: 18%;
+    height: 45%;
+}
+/* the "x" on the x button */
+.x {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif, Times, 'Times New Roman', serif;
+    font-weight: 1000;
+    color: #555555;
+}
+
+/* White Rectangle */
+.white {
+    background-color: #ffffff;
+    border-radius: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* White rectangle heights per page */
+.page#startPage .white {
+    width: 95%;
+    height: 50%;
+}
+.page#filterPage .white {
+    width: 62%;
+    height: 100%;
+}
+.page#cameraPage .white {
+    width: 70%;
+    height: 74%;
+}
+.page#albumPage .white {
+    width: 97%;
+    height: 74%;
+}
+/* CART 263 writing on the white rectangle */
+.title {
+    font-size: 20px;
+    font-family: "Levi Windows", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #555555;
+}
+
+/* Start button and container for the filter page */
+.container {
+    background-color: #e9e4e4;
+    border-radius: 0px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #ffffff #747474 #747474 #ffffff;
+}
+/* Perameters for the start page */
+.page#startPage .container {
+    width: 140px;
+    height: 15%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+/* Perameters for the filter page */
+.page#filterPage .container {
+    width: 98%;
+    height: 73%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+/* Start text on the start button */
+.start {
+    font-size: 16px;
+    font-family: "Levi Windows", sans-serif;
+    font-weight: 400;
+    color: #555555;
+}
+
+/* Back, next, delete and save buttons */
+.btn {
+    background-color: #e9e4e4;
+    border-radius: 0px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #ffffff #747474 #747474 #ffffff;
+    width: 120px;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #555555;
+}
+/* text for the back button */
+.back {
+    font-size: 20px;
+    font-family: "Levi Windows", sans-serif;
+    font-weight: 400;
+    color: #555555;
+}
+/* text for the delete button */
+.deleteAll {
+    font-size: 20px;
+    font-family: "Levi Windows", sans-serif;
+    font-weight: 400;
+    color: #555555;
+}
+/* text for the save button */
+.saveAll {
+    font-size: 20px;
+    font-family: "Levi Windows", sans-serif;
+    font-weight: 400;
+    color: #555555;
+}
+/* text for the next button */
+.next {
+    font-size: 20px;
+    font-family: "Levi Windows", sans-serif;
+    font-weight: 400;
+    color: #555555;
+}
+
+/* container for the images taken */
+#album {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    justify-content:flex-start;
+    align-items: flex-start;
+}
+
+/* file system column */
+.fileSystem {
+    width: 36%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+/* each row */
+.fileRow {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    font-size: 16px;
+    font-family: "Levi Windows", sans-serif;
+    font-weight: 400;
+    color: #555555;
+    gap: 3%;
+}
+
+.fileRow p {
+    margin: 6px 0;
+}
+/* folder icon */
+.fileIcon {
+    width: 26px;
+    margin-left: 3%;
+}
+/* children folders */
+.fileChildren {
+    display: none;
+    flex-direction: column;
+    margin-left: 20px;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    box-sizing: border-box;
+}
+
+.filterOption {
+    padding: 4px 8px;
+    border: 2px solid transparent;
+    min-height: 34px;
+}
+
+.filterOption.is-selected {
+    background-color: #d8d3d3;
+    border-color: #747474 #f6f2f2 #f6f2f2 #747474;
+}
+
+/* Video */
+video {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    transform: scaleX(-1);
+    position:relative;
+    z-index: 100;
+}
+
+
+.filterOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 120;
+}
+
+/* Camera flash overlay shown briefly at capture time. */
+#flashOverlay {
+    position: absolute;
+    inset: 0;
+    background: #ffffff;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 180;
+    transition: opacity 120ms ease;
+}
+
+#flashOverlay.flash-on {
+    opacity: 0.22;
+}
+
+.videoContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.cameraPanel {
+    width: 90%;
+    height: 74%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.page#cameraPage .cameraPanel .white {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex: 0 0 auto;
+}
+
+.page#cameraPage .videoContainer {
+    width: 100%;
+    height: 100%;
+}
+
+#countdownDisplay {
+    position: absolute;
+    inset: 0;
+    z-index: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Levi Windows", sans-serif;
+    font-size: 72px;
+    color: #ffffff;
+    text-shadow: 2px 2px 0 #000000;
+    pointer-events: none;
+}
+
+.cameraSettings {
+    width: 90px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    box-sizing: border-box;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.timerLabel {
+    margin: 0;
+    font-size: 16px;
+    font-family: "Levi Windows", sans-serif;
+    color: #555555;
+    text-align: center;
+}
+
+.timerBtn {
+    background-color: #e9e4e4;
+    border-width: 4px;
+    border-style: solid;
+    border-color: #ffffff #747474 #747474 #ffffff;
+    width: 68px;
+    padding: 6px 0;
+    font-size: 16px;
+    font-family: "Levi Windows", sans-serif;
+    color: #555555;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #555555;
+}
+
+.timerBtn:active {
+    border-color: #747474 #ffffff #ffffff #747474;
+    box-shadow: inset -1px -1px 0 #ffffff, inset 1px 1px 0 #555555;
+}
+
+.timerBtn.is-active {
+    background-color: #c3b9b9;
+    border-color: #747474 #f6f2f2 #f6f2f2 #747474;
+    color: #3f3f3f;
+}
+
+#album {
+    gap: 8px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.photoCard {
+    width: 200px;
+    background-color: #f2f2f2;
+    border-width: 4px;
+    border-style: solid;
+    border-color: #ffffff #747474 #747474 #ffffff;
+    padding: 6px;
+    box-sizing: border-box;
+}
+
+.albumPhoto {
+    width: 100%;
+    display: block;
+}
+
+.photoActions {
+    margin-top: 6px;
+    display: flex;
+    gap: 6px;
+}
+
+.photoActionBtn {
+    flex: 1;
+    background-color: #e9e4e4;
+    border-width: 4px;
+    border-style: solid;
+    border-color: #ffffff #747474 #747474 #ffffff;
+    font-family: "Levi Windows", sans-serif;
+    font-size: 14px;
+    color: #555555;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #555555;
+}
