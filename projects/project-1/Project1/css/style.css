@@ -1,7 +1,7 @@
 /* Creates the font */
 @font-face {
   font-family: 'Levi Windows';
-  src: url('./fonts/Windows Regular.ttf') format('truetype');
+  src: url('../fonts/Windows Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
