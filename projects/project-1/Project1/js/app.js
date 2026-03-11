@@ -71,7 +71,7 @@ showPage("startPage");
 async function startCamera() {
     try {
         if (!cameraStream) {
-            cameraStream = await navigator.mediaDevices.getUserMedia({
+            cameraStream = await navigator.mediaDevices.getUserMedia({ 
                 // Changed: request higher camera resolution for a clearer preview.
                 video: {
                     width: {
