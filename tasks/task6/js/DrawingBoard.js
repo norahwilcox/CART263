@@ -15,6 +15,7 @@ class DrawingBoard {
       self.overCanvas(e);
     });
 
+    // NORAH
     document.addEventListener("keydown", (e) => {
       if (e.code === "Space" && this.drawingBoardId ==="partA") {
       this.clearObjects();
@@ -34,6 +35,7 @@ class DrawingBoard {
     if(this.drawingBoardId ==="partA"){
       console.log("in A")
 
+      // NORAH 
       // added for loop to loop through objects and update their postion
       for (let i = 0; i < this.objectsOnCanvas.length; i++) {
         this.objectsOnCanvas[i].x = this.mouseOffsetX;
@@ -58,6 +60,7 @@ class DrawingBoard {
     this.mouseOffsetY = parseInt(e.clientY - this.canvasBoundingRegion.y);
     //console.log(this.mouseOffsetX, this.mouseOffsetY);
      
+  // NORAH
   let radius = Math.random() * 30 + 10;
   let fillColor = `hsl(${Math.random() * 360}, 70%, 60%)`;
   let strokeColor = `hsl(${Math.random() * 360}, 70%, 40%)`;
@@ -67,6 +70,7 @@ class DrawingBoard {
     if(this.drawingBoardId ==="partA"){
       console.log("in A")
 
+      // NORAH
       // Create new circle
       let newCircle = new CircularObj(
         this.mouseOffsetX,
@@ -95,6 +99,7 @@ class DrawingBoard {
     this.objectsOnCanvas.push(objToAdd);
   }
 
+// NORAH
 clearObjects() {
   this.objectsOnCanvas = [];
 }
