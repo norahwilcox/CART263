@@ -1,0 +1,46 @@
+body {
+    background: #dedede ;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    width:99vw;
+    height: 97vh;
+    margin-top: 2%;
+}
+
+#container {
+    background: #eef2f6;
+    width: 90vw;
+    height: 150vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    margin-bottom: 2%;
+}
+
+@font-face {
+    font-family: 'the bubble letters';
+    src: url('/assets/the\ bubble\ letters.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#title1 {
+    font-size: 32px;
+    font-family: "the bubble letters", sans-serif;
+    margin-top: 100px;
+}
+
+#title2 {
+    font-size: 28px;
+    font-family: "the bubble letters", sans-serif;
+}
+
+#three-ex {
+    background: linear-gradient(to bottom, #5992d4 0%, #e2e8ed 100%);
+    display:flex;
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+}

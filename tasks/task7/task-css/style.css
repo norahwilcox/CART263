@@ -1,0 +1,192 @@
+body{
+    background:rgb(52, 52, 52);
+    margin:0;
+    padding:0;
+    color:white;
+    opacity: .85;
+    font-family: 'Roboto', sans-serif;
+    
+  }
+
+  main{
+    display:flex;
+
+
+  
+  }
+
+  .drawingArea{
+    margin:0;
+    margin-left:20px;
+    margin-top:20px;
+    border-color:#555555;
+    border-width: 2px;
+    border-style: solid;
+    width:max-content;
+    margin-bottom:20px;
+
+  }
+
+  .typeSection{
+   margin:0;
+   margin-left:20px;
+    /* margin-left:200px; */
+    margin-top:20px;
+    border-color:#555555;
+    border-width: 2px;
+    border-style: solid;
+    width:max-content;
+    padding:0;
+    height:max-content;
+
+}
+
+.typeContainer{
+    display:flex;
+    width:max-content;
+    position:relative; 
+}
+#typeArea{
+    background:rgb(0,0,0);
+    width:400px;
+    height:350px;
+    position:relative;
+    margin-right:20px;
+    /* margin-bottom: 20px; */
+    /* padding:5px; */
+    font-size:12px
+}
+
+  #gui-canvas{
+    display:flex;
+    width:max-content;
+    position:relative;
+    
+  }
+
+  .buttonContainer{
+    padding-top:30px;
+    background:rgb(52, 52, 52);
+}
+
+.colorContainer{
+    margin-left:122px;
+    display:flex;
+    width:380px;
+    background:rgb(52, 52, 52);
+    flex-wrap:wrap;
+    padding:10px;
+}
+
+.button{
+    width:32px;
+    height:24px;
+    margin:0 auto;
+    margin-top:10px;
+    border: #eeeeee 1px;
+    border-style: solid;
+}
+
+.color-button:hover{
+    opacity: .6;
+    cursor: pointer;
+}
+
+
+#mouseCanvas{
+    background:rgb(0,0,0);
+    width:400px;
+    height:350px;
+    position:relative;
+  
+ 
+}
+
+.point{
+    width:5px;
+    height:5px;
+    background:red;
+    position:absolute;
+}
+
+.stroke-button,.shape-button, .mode-button, .opacity-button, .erase-button, .fontsize-text-button,.upper-text-button,.lower-text-button ,.erase-text-button,.change-color-button{
+    background:rgba(246, 15, 142,0.8);
+    border: #eeeeee 1px;
+    border-style: solid;
+    min-width:110px;
+    margin:5px;
+
+}
+
+.stroke-button p, .shape-button p, .mode-button p, .opacity-button p, .erase-button p, .fontsize-text-button p , .upper-text-button p,.lower-text-button p,.erase-text-button p{
+    line-height: 2px; 
+    text-align: center; 
+    color:#eeeeee;
+    font-size:12px;
+
+}
+
+
+.stroke-button:hover,.shape-button:hover, .opacity-button:hover, .mode-button:hover, .erase-button:hover,.fontsize-text-button:hover, .upper-text-button:hover,.lower-text-button:hover,.erase-text-button:hover,.change-color-button:hover{
+    background:#eeeeee;
+    cursor:pointer;
+
+}
+.stroke-button:hover > p,.shape-button:hover > p , .opacity-button:hover > p, .mode-button:hover > p, .erase-button:hover >p, .fontsize-text-button:hover>p,.upper-text-button:hover>p,.lower-text-button:hover>p,.erase-text-button:hover>p{ 
+    color: rgb(246, 15, 142);
+
+}
+.emoji-button{
+    background:white;
+    text-align:center;
+    border:solid;
+    border-color: rgb(246, 15, 142);
+    border-width: 1px;
+    font-size:18px;
+    padding-bottom:1px;
+
+}
+.emoji-button:hover{
+    background: rgb(246, 15, 142);
+  cursor:pointer;
+}
+
+.label-button{
+    margin:0 auto;
+    text-align:center;
+    color:#eeeeee;
+    font-size:14px;
+    line-height: 22px;
+}
+#setColor{
+    text-align: center;
+}
+
+.change-color-button{
+    display:flex;
+    justify-content:center;
+    padding:2px;
+    height:min-content;
+}
+
+
+.type-options{
+    padding-top:30px; 
+    background:rgb(52, 52, 52);
+}
+h1{ margin-top:20px;
+    color:rgba(246, 15, 142,1.0);
+    text-align: center;
+    background:rgb(52, 52, 52);
+    font-size:18px;
+ 
+  }
+header{
+    margin-top:20px;
+    color:rgba(246, 15, 142,1.0);
+    text-align: center;
+    background:rgb(52, 52, 52);
+    font-size:18px;
+ 
+
+}

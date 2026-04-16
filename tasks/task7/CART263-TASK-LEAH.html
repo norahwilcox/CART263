@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<title>-IMA- TASK I CART 263 2026</title>
+<meta charset="utf-8" />
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="task-css/style.css" />
+<script src="task-js/script.js"></script>
+</head>
+
+<body>
+
+  <header>LETS DRAW AND TYPE :)</header>
+  <main>
+    <section class="drawingArea">
+      <h1>DRAWING EX</h1>
+      <section id="gui-canvas">
+        <!-- col 1: side (vertical buttons)-->
+        <section class="buttonContainer">
+          <div class="button stroke-button" id="change-stroke-button">
+            <p>1</p>
+          </div>
+          <p class="label-button"> stroke</p>
+          <div class="button opacity-button" id="change-opacity-button">
+            <p> 1.0</p>
+          </div>
+          <p class="label-button"> opacity</p>
+          <div class="button shape-button" id="change-shape-button">
+            <p>square</p>
+          </div>
+          <p class="label-button"> shape</p>
+          <div class="button mode-button" id="change-mode-button">
+            <p>mouse-move</p>
+          </div>
+          <p class="label-button"> mode</p>
+          <div class="button erase-button" id="change-erase-button">
+            <p>erase</p>
+          </div>
+          <p class="label-button"> erase</p>
+        </section>
+        <!-- col 2: drawing canvas div-->
+        <div id="mouseCanvas">
+        </div>
+      </section>
+      <!-- bottom row: color buttons-->
+      <section class="colorContainer">
+        <div class="button color-button" id="lightblue" style="background:lightblue;"> </div>
+        <div class="button color-button" id="green" style="background:green;"> </div>
+        <div class="button color-button" id="red" style="background:red;"> </div>
+        <div class="button color-button" id="blue" style="background:blue;"> </div>
+        <div class="button color-button" id="purple" style="background:purple;"> </div>
+        <div class="button color-button" id="orange" style="background:orange;"> </div>
+        <div class="button color-button" id="lightcoral" style="background:lightcoral;"> </div>
+        <div class="button color-button" id="darkslateblue" style="background:darkslateblue;"> </div>
+      </section>
+    </section>
+
+
+    <!-- TYPE CONTAINER -->
+    <section class="typeSection">
+      <h1> TYPING EX</h1>
+      <div class="typeContainer">
+        <!--col 1 the buttons-->
+        <div class=type-options>
+          <div class="button fontsize-text-button" id="change-font-size-button">
+            <p>12</p>
+          </div>
+          <p class="label-button"> font-size</p>
+          <div class="button upper-text-button" id="toUpper-button">
+            <p>to upper case</p>
+          </div>
+          <p class="label-button"> uppercase</p>
+          <div class="button lower-text-button" id="toLower-button">
+            <p>to lower case</p>
+          </div>
+          <p class="label-button"> lowercase</p>
+          <div class="button erase-text-button" id="text-erase">
+            <p>erase</p>
+          </div>
+          <p class="label-button"> erase</p>
+          <div class="button change-color-button" id="changecolor"> <input id="setColor" type="color" /></div>
+          <p class="label-button"> select text color</p>
+        </div>
+        <!--col 2: the text area-->
+        <div id="typeArea">
+        </div>
+      </div>
+
+       <section class="colorContainer">
+        <div class="button emoji-button" id="lightblue">&#128640 </div>
+        <div class="button emoji-button" id="green"> &#127949 </div>
+        <div class="button emoji-button" id="red"> &#127950</div>
+        <div class="button emoji-button" id="blue"> &#128641</div>
+        <div class="button emoji-button" id="purple">&#128642 </div>
+        <div class="button emoji-button" id="orange"> &#128643</div>
+        <div class="button emoji-button" id="lightcoral"> &#128652</div>
+        <div class="button emoji-button" id="darkslateblue">&#128654</div>
+      </section>
+     
+    </section>
+
+  </main>
+</body>
+
+</html>
