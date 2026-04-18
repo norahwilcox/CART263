@@ -65,14 +65,14 @@ p {
 }
 
 @font-face {
-    font-family: 'the bubble letters';
+    font-family: 'the-bubble-letters';
     src: url('/assets/the\ bubble\ letters.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Vividly Regualar';
+    font-family: 'vividly-regualar';
     src: url('/assets/Vividly-Regular.ttf') format('truetype');
     font-weight: normal;
 }
