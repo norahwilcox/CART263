@@ -17,30 +17,91 @@
 </head>
 
 <body>
-    <div id="container">
+  <div id="container">
 
-      <div id="brackett">
-          <p id="class">ARTH 353 and CART 263</p>
-      </div>
-        <div id="title1">3D Virtual Imagining Systems</div> 
-        <div id="title2">and the Viewer's Lens</div>
-        <div id="title3">NORAH WILCOX</div>
-
-        <div id="intro">
-          <p>Introduction Paragraph here. The 3D space, what is it, does it exist, how does it work and how can we experience it? 
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-
-        <div id="threejs">
-          <canvas id="three-ex"></canvas>
-          <div id="brackett">
-            <p id="intructions">LEFT MOUSE: ORBIT --- RIGHT MOUSE: REPOSITION --- SCROLL: ZOOM</p>
-          </div>
-        </div>
+    <div id="brackett">
+      <p id="class">ARTH 353 and CART 263</p>
     </div>
+
+    <!-- <div class="img-wrapper">
+      <img src="/assets/screenshot.jpeg">
+    </div> -->
+
+    <div id="title1">3D Virtual Imagining Systems</div> 
+    <div id="title2">and the Viewer's Lens</div>
+    <div id="title3">NORAH WILCOX</div>
+
+    <div id="intro">
+      <p>The 3D space, what is it, does it exist, how does it work and how can we experience it? Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+      aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+      aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    </div>
+
+    <div id="history">
+      <p>The first 3D Graphics Software can be traced back to Ivan Sutherland, often credited as the father of computer graphics.
+        In 1963, Sutherland produced a software called <i>Sketchpad</i> as part of his PhD thesis at MIT. Running on one of the world's
+        largest computers, <i>Sketchpad</i> enabled users to dynamically scale, move, and rotate entities displayed on a screen. Within
+        this software, graphics were drawn directly onto the screen using a lightpen and altered with a variety of switches.
+        <i>Sketchpad</i> was an invention designed for both artistic and practical purposes, and it paved the way for further 3D
+        software innovations. Later in the 60s, Sutherland and his friend David Evans founded the computer graphics company,
+        “Evans and Sutherland,” which is still in business today.</p>
+      <p>What stood out most to me about Sutherland’s <i>Sketchpad</i> is the ease with which the software seems to be used. Around 60
+        years ago, communication with a computer was performed through a terminal connected to the larger computer and required
+        a substantial understanding of the device. In an interview demonstrating <i>Sketchpad's</i> capabilities, the technology was
+        described as changing from an “elaborate calculator” to a “seemingly intelligent assistant.” Sutherland effectively
+        created a graphic interface before the term was even used. In the demo video, this development in intuitivity was
+        described as “improving the relationship between man and the machine.” This, for me, marks the beginning of experiencing
+        real-time 3D graphics.</p>
+      <div class="video-box">
+        <iframe src="https://www.youtube.com/embed/6orsmFndx_o?si=xzgjaYqfG6YXLfqR" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+        <div class="caption">Video Demo of Ivan Sutherland's <i>Sketchpad</i>, 1963</div>
+      </div>
+      <p>In the early 60s, an artist by the name of John Whitney was already integrating computer graphics into his work. He
+        created abstract animations using analog computers repurposed from WW2 military equipment. His work can be seen
+        throughout the 60s in TV animation and movie title sequences. One frustration Whitney had with his process was
+        transferring high-quality images from the computer onto film. His method involved taking pictures of a monitor in a
+        darkened room; however, a fair amount of vibrancy and clarity was lost in this procedure. On this, Whitney said, “To get
+        emotionally involved creatively is not easy; one considerable problem has to do with real-time.” He compares this issue
+        to a piano player creating music: “Imagine if he had to wait 12 some hours before he could hear the music he had
+        performed.”</p>
+      <div class="video-box">
+        <iframe width="560" height="500" src="https://www.youtube.com/embed/TbV7loKp69s?si=NQWHM9rrUeRBIgDK"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+        <div class="caption">Video Demo of John Whitney's graphic work, 1961</div>
+      </div>
+    </div>
+
+    <div id="rendering">
+      <p>This struggle expressed by Whitney is felt even today by 3D artists. Although computers and 3D technology have
+        drastically advanced since the 60s, high quality 3D images are produced through what is called “rendering.”
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
+        eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+        voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+        voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
+        sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima
+        veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis
+        autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem
+        eum fugiat quo voluptas nulla pariatur?"</p>
+    </div>
+
+    <div id="threejs">
+      <canvas id="three-ex"></canvas>
+      <div id="brackett">
+        <p id="intructions">LEFT MOUSE: ORBIT --- RIGHT MOUSE: REPOSITION --- SCROLL: ZOOM</p>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

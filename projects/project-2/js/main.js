@@ -17,8 +17,8 @@ const renderer = new THREE.WebGLRenderer({
     canvas: canvas, 
     alpha: true // This makes the canvas background transparent
 });
-renderer.setSize(900, 600);
-camera.aspect = 900 / 600;
+renderer.setSize(1125, 750);
+camera.aspect = 1125 / 750;
 camera.updateProjectionMatrix();
 renderer.setPixelRatio(window.devicePixelRatio);
 
