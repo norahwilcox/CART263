@@ -9,7 +9,7 @@ body {
 
 p {
     font-size: 28px;
-    font-family: "Vividly Regualar", sans-serif;
+    font-family: "vividly-regualar", sans-serif;
     color: rgb(77, 77, 77);
     line-height: 1.2;
 }
@@ -60,7 +60,7 @@ p {
 
 #class {
     font-size: 23px;
-    font-family: "Vividly Regualar", sans-serif;
+    font-family: "vividly-regualar", sans-serif;
     color: rgb(255, 255, 255);
 }
 
@@ -79,20 +79,20 @@ p {
 
 #title1 {
     font-size: 35px;
-    font-family: "the bubble letters", sans-serif;
+    font-family: "the-bubble-letters", sans-serif;
     margin-top: 15vh;
 }
 
 #title2 {
     font-size: 30px;
     font-weight:550;
-    font-family: "the bubble letters", sans-serif;
+    font-family: "the-bubble-letters", sans-serif;
     margin-top: 1vh;
 }
 
 #title3 {
     font-size: 30px;
-    font-family: "Vividly Regualar", sans-serif;
+    font-family: "vividly-regualar", sans-serif;
     margin-top: 4vh;
     color: rgb(47, 47, 47);
 }
@@ -101,7 +101,7 @@ p {
     width: 80%;
     margin-top: 80px;
     font-size: 28px;
-    font-family: "Vividly Regualar", sans-serif;
+    font-family: "vividly-regualar", sans-serif;
     color: rgb(77, 77, 77);
     line-height: 1.2;
 }
@@ -134,7 +134,7 @@ p {
     height: 2.5vh;
     font-size: 23px;
     color: rgb(255, 255, 255);
-    font-family: "Vividly Regualar", sans-serif;
+    font-family: "vividly-regualar", sans-serif;
     padding-top: 0.6vh;
 }
 
@@ -155,7 +155,7 @@ p {
 
 #intructions {
     font-size: 23px;
-    font-family: "Vividly Regualar", sans-serif;
+    font-family: "vividly-regualar", sans-serif;
     color: rgb(255, 255, 255);
 }
 
