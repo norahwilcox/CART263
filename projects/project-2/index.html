@@ -27,8 +27,8 @@
       <img src="/assets/screenshot.jpeg">
     </div> -->
 
-    <div id="title1">3D Virtual Imagining Systems</div> 
-    <div id="title2">and the Viewer's Lens</div>
+    <div id="title1">Live 3D Visualization and the Viewer's Lens</div> 
+    <!-- <div id="title2">the Viewer's Lens</div> -->
     <div id="title3">NORAH WILCOX</div>
 
     <div id="intro">
@@ -80,27 +80,89 @@
 
     <div id="rendering">
       <p>This struggle expressed by Whitney is felt even today by 3D artists. Although computers and 3D technology have
-        drastically advanced since the 60s, high quality 3D images are produced through what is called “rendering.”
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-        eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-        voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-        voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-        sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima
-        veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis
-        autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem
-        eum fugiat quo voluptas nulla pariatur?"</p>
-    </div>
-
-    <div id="threejs">
-      <canvas id="three-ex"></canvas>
+        drastically advanced since the 60s, high quality 3D images are produced through what is called “rendering.”</p>
+      <p>There are two main ways in which 3D art is experienced, the most popular being to endow 3D art with various photographic
+      qualities to be expressed in the form of an image or video. In this case, the artist will use software such as Blender
+      to produce a scene captured through a camera object. The artist here has control over what the audience sees, at what
+      angle and from what perspective. The final product is processed through rendering software, often a lengthy but
+      necessary step in creating a polished piece of 3D art. Taking into account many factors, such as how light interacts
+      with material, modern rendering software is incredible at simulating reality and is capable of stunning results.</p>
+      <p>Often overlooked is the real-time rendering, designed to allow artists to experience their creation as it is in
+      construction. This method is predominantly used in the game industry, as users enjoy seeing the environment adapt to
+      their movements and decisions as they happen. In comparison to the elevated beauty and polish of post-rendering,
+      real-time falls short as increasing detail drastically slows performance. However, lacking in this sense, real-time
+      rendering is entirely more fascinating to me.</p>
+      <p>Below, I have created a comparison between post and real-time rendering utilizing the default Blender monkey head mesh,
+      “Suzanne,” to demonstrate their differences and unique strengths. Both examples have a bronze, detailed texture and
+      lights to illuminate the object. On the left is a rendered image using Blender’s rendering engine, “Cycles.” This engine
+      is known to produce clean, photo-realistic results. To further display its advantages, I added an HDRI to the scene,
+      which further showcases Cycles' capabilities with light interaction and reflection. On the right, I exported Suzanne as
+      a gbl file and added it to a three.js scene, an open-source JavaScript library used to create and display 3D computer
+      graphics in a web browser. Three.js uses real-time rendering to allow dynamic interaction. Users are allowed to deeply
+      explore the scene, viewing the object from various angles, perspectives, and positions.</p>
+      <div id="monkey">
+        <img src="assets/monkey.png" alt="rendered image of monkey">
+        <canvas id="canvas-monkey"></canvas>
+      </div>
       <div id="brackett">
         <p id="intructions">LEFT MOUSE: ORBIT --- RIGHT MOUSE: REPOSITION --- SCROLL: ZOOM</p>
       </div>
     </div>
+
+    <div id="synthetic">
+      <p>Speaking on post-photographic simulation, Rachel Clarke and Claudia Hart express 3D software as looking into the
+      “virtual world” and Cartesian thinking (breaking 3D space into x, y, z coordinates) as the reason why it is so immersive
+      to the human eye. Camera objects are described as “viewing portals”, framed by controls similar to those of analog or
+      digital cameras. In traditional photography, the world exists first, and the camera captures it. In 3D software, you
+      aren't just taking a picture; you are simultaneously using the software to build a world and the mathematical rules for
+      how the camera object sees it. Meaning the virtual world is purely digital data that only becomes "real" when it is
+      processed through the software's rendering engine. Whether that be in the viewport display or in the form of animation.</p>
+    <p>Is the 3D space real? Should it be considered a synthetic image? "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
+    eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+    voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+    voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
+    sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima
+    veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis
+    autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem
+    eum fugiat quo voluptas nulla pariatur?"</p>
+    <p>How does it differ from AI images? Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+    <div id="art">
+      <p>How does real-time 3D affect the art world and how do we experience it moving forward. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+      aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+      aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+      occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Explain vision for my project. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+      aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+      aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+      occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+    <div id="threejs">
+      <canvas id="canvas-final"></canvas>
+      <div id="brackett">
+        <p id="intructions">LEFT MOUSE: ORBIT --- RIGHT MOUSE: REPOSITION --- SCROLL: ZOOM</p>
+      </div>
+    </div>
+
+    <div id="conclusion">
+      <p>Final thougts on the work and how effective it is. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+      aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+      aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+      occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+    <div id="works">
+      <p>Works cited: </p>
+        <p>Can a camera create an orthographic view: https://photo.stackexchange.com/questions/56200/is-it-fundamentally-possible-to-capture-an-orthographic-image-of-the-real-world</p>
+        <p>Can a camera create an orthographic view: https://photo.stackexchange.com/questions/56200/is-it-fundamentally-possible-to-capture-an-orthographic-image-of-the-real-world</p>
+        <p>Can a camera create an orthographic view: https://photo.stackexchange.com/questions/56200/is-it-fundamentally-possible-to-capture-an-orthographic-image-of-the-real-world</p>
+      </div>
+
   </div>
 </body>
 
