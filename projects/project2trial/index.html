@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js Mirror - Transparent & CSS Gradient</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            /* Updated CSS Gradient: Black to Grey */
+            background: linear-gradient(to bottom, #000000 0%, #202020 100%);
+        }
+
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+    }
+    </script>
+
+    <script type="module">
+        import * as THREE from 'three';
+        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+        import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+        // 1. Scene & Renderer
+        const scene = new THREE.Scene();
+
+        // Fog color changed to #444444 to blend with the bottom of the gradient
+        scene.fog = new THREE.FogExp2(0x0D0D0D, 0.3);
+
+        // Alpha: true allows the CSS background to show through
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.shadowMap.enabled = true;
+        document.body.appendChild(renderer.domElement);
+
+        // 2. Camera 1 (Main Mirror View)
+        const camera1 = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera1.position.set(0, 0, 4);
+        scene.add(camera1);
+
+        // 3. Camera 2 (Observer View)
+        const camera2 = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera2.position.set(4, 4, 4);
+        camera2.lookAt(0, 0, 0);
+        camera2.layers.enable(1);
+        camera2.layers.enable(2);
+        scene.add(camera2);
+
+        let activeCamera = camera1;
+
+        // 4. Camera Helper (Layer 2)
+        const helper = new THREE.CameraHelper(camera1);
+        helper.layers.set(2);
+        scene.add(helper);
+
+        // 5. Webcam Setup
+        const video = document.createElement('video');
+        video.autoplay = true;
+        video.playsInline = true;
+        navigator.mediaDevices.getUserMedia({ video: { width: 1280, height: 720 } }).then(stream => {
+            video.srcObject = stream;
+            video.play();
+        });
+        const videoTexture = new THREE.VideoTexture(video);
+        videoTexture.colorSpace = THREE.SRGBColorSpace;
+
+        // 6. Webcam Plane (Layer 1)
+        const planeGeo = new THREE.PlaneGeometry(2, 2);
+        const planeMat = new THREE.MeshBasicMaterial({ map: videoTexture, side: THREE.DoubleSide });
+        const webcamPlane = new THREE.Mesh(planeGeo, planeMat);
+        webcamPlane.layers.set(1);
+        webcamPlane.scale.x = -1;
+        webcamPlane.position.set(0, 0, -camera1.near);
+        camera1.add(webcamPlane);
+
+        // 7. Reflection Engine
+        const cubeRenderTarget = new THREE.WebGLCubeRenderTarget(1024, { format: THREE.RGBAFormat });
+        const cubeCamera = new THREE.CubeCamera(0.1, 100, cubeRenderTarget);
+        cubeCamera.layers.set(1);
+        scene.add(cubeCamera);
+
+        // 8. Particles (Dust)
+        const particleCount = 2000;
+        const positions = new Float32Array(particleCount * 3);
+        for (let i = 0; i < particleCount; i++) {
+            positions[i * 3] = (Math.random() - 0.5) * 10;
+            positions[i * 3 + 1] = (Math.random() - 0.5) * 10;
+            positions[i * 3 + 2] = (Math.random() - 0.5) * 10;
+        }
+        const dustGeo = new THREE.BufferGeometry();
+        dustGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        const dustMat = new THREE.PointsMaterial({
+            color: 0xffffff,
+            size: 0.015,
+            transparent: true,
+            opacity: 0.4,
+            blending: THREE.AdditiveBlending
+        });
+        const dustMotes = new THREE.Points(dustGeo, dustMat);
+        scene.add(dustMotes);
+
+        // 9. GLB Loading
+        let mirrorObject = null;
+        const loader = new GLTFLoader();
+        loader.load('Monkey2.glb', (gltf) => {
+            mirrorObject = gltf.scene;
+            mirrorObject.traverse((child) => {
+                if (child.isMesh) {
+                    child.castShadow = true;
+                    child.receiveShadow = true;
+                    child.material = new THREE.MeshStandardMaterial({
+                        color: 0xffffff,
+                        metalness: 1,
+                        roughness: 0.05,
+                        envMap: cubeRenderTarget.texture,
+                        envMapIntensity: 3.0
+                    });
+                }
+            });
+            scene.add(mirrorObject);
+        });
+
+        // 10. Spotlight
+        const spotLight = new THREE.SpotLight(0xffffff, 200);
+        spotLight.position.set(2, 5, 2);
+        spotLight.angle = Math.PI / 6;
+        spotLight.penumbra = 0.3;
+        spotLight.castShadow = true;
+        scene.add(spotLight);
+
+        const spotTarget = new THREE.Object3D();
+        scene.add(spotTarget);
+        spotLight.target = spotTarget;
+
+        // 11. Controls
+        const controls = new OrbitControls(activeCamera, renderer.domElement);
+        controls.enableDamping = true;
+
+        window.addEventListener('keydown', (event) => {
+            if (event.key === '1') {
+                activeCamera = camera1;
+                controls.object = camera1;
+            } else if (event.key === '2') {
+                activeCamera = camera2;
+                controls.object = camera2;
+            }
+        });
+
+        // 12. Animation Loop
+        function animate() {
+            requestAnimationFrame(animate);
+
+            dustMotes.rotation.y += 0.0005;
+
+            if (mirrorObject) {
+                const dist = activeCamera.position.distanceTo(mirrorObject.position);
+                const scaleFactor = 2 / dist;
+                webcamPlane.scale.set(-scaleFactor * 1.77, scaleFactor, 1);
+
+                mirrorObject.visible = false;
+                cubeCamera.position.copy(mirrorObject.position);
+                cubeCamera.update(renderer, scene);
+                mirrorObject.visible = true;
+            }
+
+            helper.update();
+            controls.update();
+            renderer.render(scene, activeCamera);
+        }
+
+        window.addEventListener('resize', () => {
+            const aspect = window.innerWidth / window.innerHeight;
+            camera1.aspect = aspect;
+            camera1.updateProjectionMatrix();
+            camera2.aspect = aspect;
+            camera2.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        animate();
+    </script>
+</body>
+
+</html>
