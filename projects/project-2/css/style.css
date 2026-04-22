@@ -3,7 +3,7 @@ body {
     display: flex;
     justify-content: center;
     width:99vw;
-    height: 97vh;
+    height:fit-content;
     margin-top: 2%;
 }
 
@@ -32,7 +32,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 0.6vh;
+    /* padding-top: 0.6vh; */
     margin-bottom: 10vh;
 }
 
@@ -167,7 +167,7 @@ img {
 
 #canvas-final {
     background: linear-gradient(to bottom, #5992d4 0%, #e2e8ed 100%);
-    display:flex;
+    display:block;
     width: 100%;
     height: 100%;
 }
@@ -177,4 +177,20 @@ img {
     display: flex;
     width: 50%;
     height: 50%;
+}
+
+#final-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+#stats-overlay {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+    padding: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+    display: none;
 }

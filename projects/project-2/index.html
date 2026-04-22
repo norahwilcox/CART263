@@ -11,7 +11,7 @@
     }
     </script>
     <meta charset="utf-8">
-    <title>3D Virtual Imagining Systems and the Viewer's Lens</title>
+    <title>Live 3D Visualization and the Viewer's Lens</title>
     <script type="module" src="js/main.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -22,10 +22,6 @@
     <div id="brackett">
       <p id="class">ARTH 353 and CART 263</p>
     </div>
-
-    <!-- <div class="img-wrapper">
-      <img src="/assets/screenshot.jpeg">
-    </div> -->
 
     <div id="title1">Live 3D Visualization and the Viewer's Lens</div> 
     <!-- <div id="title2">the Viewer's Lens</div> -->
@@ -46,7 +42,7 @@
         software innovations. Later in the 60s, Sutherland and his friend David Evans founded the computer graphics company,
         “Evans and Sutherland,” which is still in business today.</p>
       <p>What stood out most to me about Sutherland’s <i>Sketchpad</i> is the ease with which the software seems to be used. Around 60
-        years ago, communication with a computer was performed through a terminal connected to the larger computer and required
+        years ago, communication with a computer was performed through a terminal connected to the larger meachine and required
         a substantial understanding of the device. In an interview demonstrating <i>Sketchpad's</i> capabilities, the technology was
         described as changing from an “elaborate calculator” to a “seemingly intelligent assistant.” Sutherland effectively
         created a graphic interface before the term was even used. In the demo video, this development in intuitivity was
@@ -81,12 +77,12 @@
     <div id="rendering">
       <p>This struggle expressed by Whitney is felt even today by 3D artists. Although computers and 3D technology have
         drastically advanced since the 60s, high quality 3D images are produced through what is called “rendering.”</p>
-      <p>There are two main ways in which 3D art is experienced, the most popular being to endow 3D art with various photographic
+      <p>There are two main ways in which 3D art is experienced, the better known way being to endow 3D art with various photographic
       qualities to be expressed in the form of an image or video. In this case, the artist will use software such as Blender
       to produce a scene captured through a camera object. The artist here has control over what the audience sees, at what
       angle and from what perspective. The final product is processed through rendering software, often a lengthy but
       necessary step in creating a polished piece of 3D art. Taking into account many factors, such as how light interacts
-      with material, modern rendering software is incredible at simulating reality and is capable of stunning results.</p>
+      with material, modern rendering engines are incredible at simulating reality and is capable of stunning results.</p>
       <p>Often overlooked is the real-time rendering, designed to allow artists to experience their creation as it is in
       construction. This method is predominantly used in the game industry, as users enjoy seeing the environment adapt to
       their movements and decisions as they happen. In comparison to the elevated beauty and polish of post-rendering,
@@ -107,28 +103,22 @@
       <div id="brackett">
         <p id="intructions">LEFT MOUSE: ORBIT --- RIGHT MOUSE: REPOSITION --- SCROLL: ZOOM</p>
       </div>
-    </div>
-
-    <div id="synthetic">
-      <p>Speaking on post-photographic simulation, Rachel Clarke and Claudia Hart express 3D software as looking into the
-      “virtual world” and Cartesian thinking (breaking 3D space into x, y, z coordinates) as the reason why it is so immersive
-      to the human eye. Camera objects are described as “viewing portals”, framed by controls similar to those of analog or
-      digital cameras. In traditional photography, the world exists first, and the camera captures it. In 3D software, you
-      aren't just taking a picture; you are simultaneously using the software to build a world and the mathematical rules for
-      how the camera object sees it. Meaning the virtual world is purely digital data that only becomes "real" when it is
-      processed through the software's rendering engine. Whether that be in the viewport display or in the form of animation.</p>
-    <p>Is the 3D space real? Should it be considered a synthetic image? "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-    eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-    voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-    voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-    sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima
-    veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis
-    autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem
-    eum fugiat quo voluptas nulla pariatur?"</p>
-    <p>How does it differ from AI images? Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Displaying these two methods alongside each other, I noted some interesting observations, primarily with how I
+      experienced the three.js model. When zooming in and out of the scene, the perspective from which I was viewing the model
+      seemed to change based on my proximity to it, mimicking how the human eye will perceive an object in reality. Meaning
+      the further away the object, the flatter it seems, and as you grow closer, it begins to reveal more of its surface.
+      Although I had coded the perspective of the camera in three.js to 50mm, this element was adapted based on the user’s
+      motion. Another detail I took note of was the effect of the unchanging background. Without a point of reference in the
+      scene to indicate where Suzanne exists in space, it became unclear to me whether I was controlling the camera, my
+      viewing point, or whether I was staying stagnant and controlling the object. Lastly, the open camera control reminded me
+      of a text on post-photographic simulation by Rachel Clarke and Claudia Hart. They express 3D imaging systems as
+      technology for looking into the “virtual world” and the camera as “viewing portals”. These viewing portals mimic the
+      qualities of a camera; however, they possess the ability to transcend worldly restrictions. I experienced this myself
+      with the example above, as I could pass directly through the object’s mesh, breaking the illusion of reality.</p>
+    <p>Rachel Clarke and Claudia Hart express that in 3D imaging software, you are simultaneously using the software to build a
+      world as well as the mathematical rules for how the camera object sees it. Meaning the virtual world is purely digital
+      data that only becomes "real" when it is processed through the software's rendering engine. Whether that be in the
+      viewport display in Blender, a beautifully rendered animation or in real-time using three.js.</p>
     </div>
 
     <div id="art">
@@ -142,10 +132,13 @@
       occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
 
-    <div id="threejs">
-      <canvas id="canvas-final"></canvas>
+    <div id="threejs"> 
+      <div id="final-wrapper">
+        <canvas id="canvas-final"></canvas>
+        <div id="stats-overlay"></div>
+      </div>
       <div id="brackett">
-        <p id="intructions">LEFT MOUSE: ORBIT --- RIGHT MOUSE: REPOSITION --- SCROLL: ZOOM</p>
+        <p id="intructions">LEFT MOUSE: ORBIT --- RIGHT MOUSE: REPOSITION --- SCROLL: ZOOM --- 1: ILLUSION --- 2: REALITY</p>
       </div>
     </div>
 
