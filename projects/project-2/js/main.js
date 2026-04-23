@@ -110,7 +110,7 @@ function create3DScene(canvasId, modelPath, width, height) {
     let particleSystem = null; 
 
     if (canvasId === '#canvas-final') {
-        const particlesCount = 5000;
+        const particlesCount = 3500;
         const posArray = new Float32Array(particlesCount * 3);
 
         for (let i = 0; i < particlesCount * 3; i++) {
@@ -124,7 +124,7 @@ function create3DScene(canvasId, modelPath, width, height) {
             size: 0.02,
             color: 0xffffff,
             transparent: true,
-            opacity: 0.5
+            opacity: 0.2
         });
 
         particleSystem = new THREE.Points(particleGeo, particleMat);
