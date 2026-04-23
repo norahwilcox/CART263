@@ -96,8 +96,8 @@ function create3DScene(canvasId, modelPath, width, height) {
                     child.receiveShadow = true;
                     child.material = new THREE.MeshStandardMaterial({
                         color: 0xffffff,
-                        metalness: 1,
-                        roughness: 0.05,
+                        metalness: 0.999,
+                        roughness: 0.07,
                         envMap: cubeRenderTarget.texture,
                         envMapIntensity: 3.0
                     });
@@ -187,5 +187,5 @@ function create3DScene(canvasId, modelPath, width, height) {
     });
 }
 
-create3DScene('#canvas-final', 'assets/Monkey2.glb', 1125, 750);
+create3DScene('#canvas-final', 'assets/final.glb', 1125, 750);
 create3DScene('#canvas-monkey', 'assets/monkey.glb', 530, 530);
