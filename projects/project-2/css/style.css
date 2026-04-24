@@ -1,3 +1,4 @@
+/* background */
 body {
     background: #e9eaea ;
     display: flex;
@@ -5,14 +6,7 @@ body {
     width:99vw;
     margin-top: 2%;
 }
-
-p {
-    font-size: 20px;
-    font-family:'Times New Roman', Times, serif;
-    color: rgb(77, 77, 77);
-    line-height: 1.2;
-}
-
+/* white container, contains all elemts */
 #container {
     background: #ffffff;
     width: 90vw;
@@ -23,7 +17,14 @@ p {
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
     margin-bottom: 2%;
 }
-
+/* most of the text */
+p {
+    font-size: 20px;
+    font-family:'Times New Roman', Times, serif;
+    color: rgb(77, 77, 77);
+    line-height: 1.2;
+}
+/* blue thin rectangle */
 #brackett {
     background: #b2bdd2;
     width: 100%;
@@ -34,46 +35,26 @@ p {
     /* padding-top: 0.6vh; */
     margin-bottom: 10vh;
 }
-
+/* text for the very top */
 #class {
     font-size: 15px;
     font-family: 'Times New Roman', Times, serif;
     color: rgb(255, 255, 255);
 }
-
-@font-face {
-    font-family: 'the-bubble-letters';
-    src: url('../assets/bubble.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'vividly-regualar';
-    src: url('../assets/vividly.ttf') format('truetype');
-    font-weight: normal;
-}
-
+/* title of the project */
 #title1 {
     font-size: 35px;
     font-family:'Times New Roman', Times, serif;
     margin-top: 5vh;
 }
-
-#title2 {
-    font-size: 30px;
-    /* font-weight:550; */
-    font-family:'Times New Roman', Times, serif;
-    margin-top: 1vh;
-}
-
+/* my name below the title*/
 #title3 {
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
     margin-top: 4vh;
     color: rgb(47, 47, 47);
 }
-
+/* introduction paragraph */
 #intro {
     width: 80%;
     margin-top: 80px;
@@ -82,66 +63,50 @@ p {
     color: rgb(77, 77, 77);
     line-height: 1.2;
 }
-
+/* history paragraph */
 #history {
     width: 80%;
     margin-top: 8vh;
 }
-
+/* paragraph on 3D rendering */
 #rendering {
     width: 80%;
 }
-
-#synthetic {
-    width: 80%;
-}
-
+/* paragraph about my project */
 #art {
     width: 80%;
 }
-
+/* final thoughts paragraph */
 #conclusion {
     width: 80%;
 }
-
+/* works cited */
 #works {
     width: 80%;
     margin-top: 20vh
 }
-
+/* credits cited */
 #credits {
     width: 80%;
     margin-top: 5vh
 }
-
+/* inspiration cited */
 #inspiration {
     width: 80%;
     margin-top: 5vh;
     margin-bottom: 5vh;
 }
-
+/* containers for Youtube links */
 .video-box {
     width: 80%;
     margin: 50px auto;
     text-align: center;
 }
-
 .video-box iframe {
     width: 100%;
     aspect-ratio: 16 / 9;
     display: block;
 }
-
-.caption {
-    background: #b2bdd2;
-    width: 100%;
-    height: 2.5vh;
-    font-size: 15px;
-    color: rgb(255, 255, 255);
-    font-family: 'Times New Roman', Times, serif;
-    padding-top: 0.6vh;
-}
-
 .video-container iframe {
     position: absolute;
     top: 0;
@@ -149,51 +114,47 @@ p {
     width: 100%;
     height: 100%;
 }
-
-#threejs {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 60px;
-}
-
+/* containers for 3js canvases */
+/* first canvas */
 #monkey {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 60px;
 }
-
+/* second canvas */
+#threejs {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+}
+/* image size for blender render */
 img {
     width: 530px;
     height: 530px;
 }
-
-#intructions {
-    font-size: 15px;
-    font-family: 'Times New Roman', Times, serif;
-    color: rgb(255, 255, 255);
-}
-
+/* 3js */
+/* second 3js scene */
 #canvas-final {
     background: linear-gradient(to bottom, #222222 0%, #000000 150%);
     display:block;
     width: 100%;
     height: 100%;
 }
-
+/* first 3js scene */
 #canvas-monkey {
     background: rgb(54, 54, 54);
     display: flex;
     width: 50%;
     height: 50%;
 }
-
+/* wraps the second 3js scene to cainatin stats display */
 #final-wrapper {
     position: relative;
     display: inline-block;
 }
-
+/* stats overlay on 3js second canvas */
 #stats-overlay {
     position: absolute;
     top: 10px;
@@ -204,4 +165,20 @@ img {
     color: #ffffff;
     font-size: 20px;
     display: none;
+}
+/* instructions below 3js scens on how to control the scene */
+#intructions {
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(255, 255, 255);
+}
+/* captions below yoytube videos */
+.caption {
+    background: #b2bdd2;
+    width: 100%;
+    height: 2.5vh;
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    font-family: 'Times New Roman', Times, serif;
+    padding-top: 0.6vh;
 }

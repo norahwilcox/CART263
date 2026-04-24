@@ -1,9 +1,13 @@
+// import libraries
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
+// creates 3d scene
 function create3DScene(canvasId, modelPath, width, height) {
+    // shows the canvas that is chosen to be displayed 
     const canvas = document.querySelector(canvasId);
+
     const statsOverlay = document.getElementById('stats-overlay'); 
 
     const scene = new THREE.Scene();
